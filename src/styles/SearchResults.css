@@ -1,0 +1,446 @@
+/* SearchResults.css */
+.search-results {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Grid layouts for different categories */
+.search-results--images {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.search-results--videos,
+.search-results--news,
+.search-results--default {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+}
+
+/* Result Cards Base Styles */
+.result-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Styles */
+.result-card.dark-mode {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+/* Image Results Styles */
+.result-card--image {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card__image-wrapper {
+  position: relative;
+  padding-top: 75%; /* 4:3 Aspect Ratio */
+  overflow: hidden;
+}
+
+.result-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.result-card--image:hover .result-card__image {
+  transform: scale(1.05);
+}
+
+.result-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.result-card__view-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 4px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.result-card--image:hover .result-card__overlay {
+  opacity: 1;
+}
+
+.result-card--image:hover .result-card__view-text {
+  transform: translateY(0);
+}
+
+/* Video Results Styles */
+.result-card--video {
+  display: flex;
+  flex-direction: column;
+}
+
+.result-card__video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  background: #000;
+}
+
+.result-card__video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result-card__play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.result-card__play-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.result-card__play-button i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* .result-card__play-button span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 2px solid white;
+  border-radius: 4px;
+  white-space: nowrap;
+} */
+
+.result-card--video:hover .result-card__play-overlay {
+  opacity: 1;
+}
+
+.result-card--video:hover .result-card__play-button {
+  transform: translateY(0);
+}
+
+/* News Results Styles */
+.result-card--news {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.result-card--news .result-card__content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+.result-card--news .result-card__news-image {
+  flex: 0 0 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.result-card--news .result-card__news-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.result-card--news .result-card__thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Make buttons actually clickable */
+.result-card__view-text,
+.result-card__play-button {
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.result-card__view-text:hover,
+.result-card__play-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure overlay buttons are clickable */
+.result-card__overlay,
+.result-card__play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: auto; /* Make sure clicks register */
+}
+
+.result-card--image:hover .result-card__overlay,
+.result-card--video:hover .result-card__play-overlay {
+  opacity: 1;
+}
+
+/* Responsive adjustments for news cards */
+@media (max-width: 640px) {
+  .result-card--news .result-card__content {
+    flex-direction: column;
+  }
+
+  .result-card--news .result-card__news-image {
+    flex: 0 0 150px;
+    height: 150px;
+  }
+}
+
+/* Content Styles */
+.result-card__content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.result-card__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.result-card__description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.dark-mode .result-card__description {
+  color: #b0b0b0;
+}
+
+.result-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: auto;
+  font-size: 0.85rem;
+}
+
+.result-card__source,
+.result-card__date {
+  color: #666;
+  font-weight: 500;
+}
+
+.dark-mode .result-card__source,
+.dark-mode .result-card__date {
+  color: #b0b0b0;
+}
+
+.result-card__url {
+  color: #1a73e8;
+  font-size: 0.9rem;
+  text-decoration: none;
+  word-break: break-all;
+  margin: 0;
+}
+
+.dark-mode .result-card__url {
+  color: #8ab4f8;
+}
+
+/* Loading State */
+.search-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.search-loader__spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1a73e8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* No Results State */
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+}
+
+.no-results__icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #999;
+}
+
+.no-results__text {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Accessibility */
+.result-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #1a73e8;
+}
+
+.dark-mode .result-card:focus-visible {
+  box-shadow: 0 0 0 3px #8ab4f8;
+}
+
+/* YouTube Icon Style */
+.result-card__source .fab.fa-youtube {
+  color: #ff0000;
+  margin-right: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .search-results {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .result-card__title {
+    font-size: 1rem;
+  }
+
+  .result-card__content {
+    padding: 0.75rem;
+  }
+
+  .result-card__play-button i {
+    font-size: 2rem;
+  }
+
+  .result-card__view-text,
+  .result-card__play-button span {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  .result-card,
+  .result-card__image,
+  .result-card__overlay,
+  .result-card__view-text,
+  .result-card__play-overlay,
+  .result-card__play-button,
+  .search-loader__spinner {
+    transition: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .result-card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  .result-card__overlay,
+  .result-card__play-overlay,
+  .search-loader {
+    display: none;
+  }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) {
+  .result-card__overlay,
+  .result-card__play-overlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .result-card__view-text,
+  .result-card__play-button {
+    transform: translateY(0);
+  }
+}

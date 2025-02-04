@@ -1,0 +1,58 @@
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .brand-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .brand-logo__search {
+    background: linear-gradient(45deg, #4285f4, #0f9d58);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .brand-logo__wave {
+    background: linear-gradient(45deg, #db4437, #f4b400);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .theme-toggle,
+  .settings-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .theme-toggle:hover,
+  .settings-btn:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+  }
+  
+  .dark-mode .theme-toggle,
+  .dark-mode .settings-btn {
+    border-color: #404040;
+    color: #fff;
+  }
+  
+  .dark-mode .theme-toggle:hover,
+  .dark-mode .settings-btn:hover {
+    background: #404040;
+  }

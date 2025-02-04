@@ -1,0 +1,31 @@
+.search-engine {
+    min-height: 100vh;
+    transition: all 0.3s ease;
+  }
+  
+  .search-engine.dark-mode {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+  
+  .search-engine__main {
+    padding-top: 2rem;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
