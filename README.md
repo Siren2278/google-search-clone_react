@@ -53,9 +53,9 @@ const RAPID_API_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
 ```
 
 ## 🖥️ Screenshots
-![Images](dash.png)
-![Images](images.png)
-![Images](videos.png)
+![](dash.png)
+![](images.png)
+![](videos.png)
 
 ## 📜 License
 This project is licensed under the **MIT License**.
