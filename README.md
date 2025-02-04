@@ -1,4 +1,4 @@
-# SearchX - A Google Search Clone
+# SearchWave - A Google Search Clone
 
 ## 🚀 Overview
 SearchX is a modern, aesthetically appealing Google Search clone built with React, Bootstrap, and FontAwesome icons. It integrates the Google Search API (via RapidAPI) to fetch search results, images, videos, and news. Unlike the traditional Google Search interface, SearchX features a sleek UI with dark mode support and a category-based search system.
