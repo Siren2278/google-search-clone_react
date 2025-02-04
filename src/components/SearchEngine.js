@@ -16,8 +16,8 @@ const SearchEngine = () => {
   const [searchCategory, setSearchCategory] = useState('all');
   
   // Google Custom Search API configuration
-  const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
-  const SEARCH_ENGINE_ID = process.env.REACT_APP_SEARCH_ENGINE_ID;
+  const API_KEY = 'AIzaSyDlaROHNrZed426bXorXYWwGILxkd2olyE';
+  const SEARCH_ENGINE_ID = '0592128928bb54759';
   const BASE_URL = 'https://www.googleapis.com/customsearch/v1';
   
   // Initialize with URL parameters on component mount
