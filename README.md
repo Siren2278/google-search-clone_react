@@ -1,7 +1,7 @@
 # SearchWave - A Google Search Clone
 
 ## 🚀 Overview
-SearchX is a modern, aesthetically appealing Google Search clone built with React, Bootstrap, and FontAwesome icons. It integrates the Google Search API (via RapidAPI) to fetch search results, images, videos, and news. Unlike the traditional Google Search interface, SearchX features a sleek UI with dark mode support and a category-based search system.
+SearchWave is a modern, aesthetically appealing Google Search clone built with React, Bootstrap, and FontAwesome icons. It integrates the Google Search API to fetch search results, images, videos, and news. Unlike the traditional Google Search interface, SearchX features a sleek UI with dark mode support and a category-based search system.
 
 ## ✨ Features
 - 🔍 **Web Search** - Perform Google-powered searches.
@@ -14,7 +14,7 @@ SearchX is a modern, aesthetically appealing Google Search clone built with Reac
 
 ## 🛠️ Tech Stack
 - **Frontend:** React, Bootstrap, FontAwesome
-- **API:** Google Search API (via RapidAPI)
+- **API:** Google Search API 
 - **Styling:** CSS, Bootstrap
 
 ## 📦 Installation
@@ -22,8 +22,8 @@ To set up the project locally, follow these steps:
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/your-username/searchx.git
-cd searchx
+git clone https://github.com/your-username/search-clone.git
+cd search-clone
 ```
 
 ### 2️⃣ Install Dependencies
@@ -53,7 +53,9 @@ const RAPID_API_KEY = process.env.REACT_APP_RAPIDAPI_KEY;
 ```
 
 ## 🖥️ Screenshots
-![SearchX Screenshot](screenshot.png)
+![Images](dash.png)
+![Images](images.png)
+![Images](videos.png)
 
 ## 📜 License
 This project is licensed under the **MIT License**.
